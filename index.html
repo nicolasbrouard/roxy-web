@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roxy Thunder | Official Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-orange: #f37021;
@@ -16,34 +17,32 @@
         body {
             background-color: var(--black);
             color: var(--white);
-            font-family: 'Arial Black', Gadget, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* Hero / Header Section */
+        /* Hero / Header Section [cite: 4] */
         header {
             background: linear-gradient(135deg, var(--primary-yellow), var(--primary-orange));
-            /* Subtle ink-splatter grain effect */
             background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)" opacity="0.3"/></svg>'), 
                               linear-gradient(135deg, var(--primary-yellow), var(--primary-orange));
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         .logo-text {
-            font-size: clamp(3rem, 10vw, 6rem);
-            text-transform: uppercase;
+            font-family: 'Qwitcher Grypen', cursive; /* Applied requested font */
+            font-size: clamp(5rem, 15vw, 10rem);
             color: var(--black);
             margin: 0;
-            letter-spacing: -3px;
-            line-height: 0.9;
+            line-height: 0.8;
         }
 
-        /* The Torn Paper Edge effect from the Brand Guide */
+        /* Torn Paper Edge [cite: 4] */
         header::after {
             content: "";
             position: absolute;
@@ -70,13 +69,8 @@
             text-decoration: none;
             margin: 0 15px;
             text-transform: uppercase;
+            font-weight: bold;
             font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-yellow);
         }
 
         section {
@@ -91,30 +85,12 @@
             text-transform: uppercase;
             border-left: 10px solid var(--primary-orange);
             padding-left: 20px;
-            margin-bottom: 30px;
         }
 
-        /* Events Section */
-        .event-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid #333;
-            transition: background 0.3s;
-        }
-
-        .event-row:hover {
-            background: #111;
-        }
-
-        .date { font-weight: bold; color: var(--primary-orange); width: 150px; }
-        .venue { flex-grow: 1; }
-
-        /* Merch Section */
         .merch-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
 
         .merch-item {
@@ -122,35 +98,6 @@
             padding: 20px;
             text-align: center;
             border: 1px solid #333;
-        }
-
-        .merch-img {
-            background: #333;
-            aspect-ratio: 1/1;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            color: #666;
-        }
-
-        .price {
-            display: block;
-            font-size: 1.2rem;
-            color: var(--primary-yellow);
-            margin-top: 10px;
-        }
-
-        /* Forms */
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            background: #111;
-            border: 1px solid #444;
-            color: white;
-            box-sizing: border-box;
         }
 
         button {
@@ -163,119 +110,88 @@
             text-transform: uppercase;
         }
 
-        .social-bar {
-            margin-top: 20px;
-            font-size: 0.9rem;
-        }
-
-        .social-bar a {
-            color: var(--black);
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background: #111;
+            border: 1px solid #444;
+            color: white;
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#listen">Listen</a>
-        <a href="#events">Events</a>
-        <a href="#merch">Merch</a>
-        <a href="#contact">Contact</a>
+        <a href="#home">Home</a> [cite: 5]
+        <a href="#listen">Listen</a> [cite: 6]
+        <a href="#events">Events</a> [cite: 7]
+        <a href="#merch">Merch</a> [cite: 8]
+        <a href="#contact">Contact</a> [cite: 9]
     </nav>
 
     <header id="home">
-        <h1 class="logo-text">Roxy<br>Thunder</h1>
-        <div class="social-bar">
-            INSTAGRAM / FACEBOOK / SPOTIFY / YOUTUBE / TIKTOK
-        </div>
+        <h1 class="logo-text">Roxy Thunder</h1> [cite: 1]
+        <div style="margin-top: 20px; font-weight: bold;">INSTAGRAM / FACEBOOK / SPOTIFY / YOUTUBE / TIKTOK</div> [cite: 10]
     </header>
 
     <section id="about">
         <h2>The Band</h2>
-        [cite_start]<p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Javier Guevara Garcia and Carmelo Fuizzotto) is a fresh, high-energy rock band rising from Montréal's vibrant scene[cite: 11]. [cite_start]Founded in 2025, they blend classic-rock power with modern attitude, delivering big riffs, catchy hooks, and electrifying presence[cite: 12].</p>
-        [cite_start]<p>In March 2026, they released their debut album, instantly marking their arrival as a rising force to watch[cite: 13]. [cite_start]Loud, dynamic, and built for the stage, Roxy Thunder brings raw heart and unstoppable fire—a new force ready to shake the city and spark the next rock anthem[cite: 14].</p>
+        <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Javier Guevara Garcia and Carmelo Fuizzotto) is a fresh, high-energy rock band rising from Montréal's vibrant scene. [cite: 11]</p>
+        <p>Founded in 2025, they blend classic-rock power with modern attitude, delivering big riffs, catchy hooks, and electrifying presence. [cite: 12]</p>
+        <p>In March 2026, they released their debut album, instantly marking their arrival as a rising force to watch. [cite: 13]</p>
+        <p>Loud, dynamic, and built for the stage, Roxy Thunder brings raw heart and unstoppable fire—a new force ready to shake the city and spark the next rock anthem. [cite: 14]</p>
     </section>
 
     <section id="listen">
-        <h2>Listen</h2>
+        <h2>Listen</h2> [cite: 16]
         <div style="background: #1a1a1a; width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border: 1px solid #333;">
-            <p>[YouTube Video Embed Placeholder]</p>
+            <p>Video Player Placeholder</p> [cite: 19]
         </div>
         <p style="text-align: center; margin-top: 20px;">
-            <a href="#" style="color: var(--primary-yellow); text-decoration: none;">&rarr; FOLLOW ON SPOTIFY</a>
+            <a href="#" style="color: var(--primary-yellow); text-decoration: none;">LISTEN ON SPOTIFY</a> [cite: 24]
         </p>
     </section>
 
     <section id="events">
-        <h2>Events</h2>
-        <div class="event-row">
-            <span class="date">2 MAY 2026</span>
-            <span class="venue">La Sotterenea (Montréal)</span>
-        </div>
-        <div class="event-row">
-            <span class="date">MAY 2026</span>
-            <span class="venue">Bar #2 / Bar #3</span>
-        </div>
-        <div class="event-row">
-            <span class="date">JUNE 2026</span>
-            <span class="venue">Bar #4 / Bar #5 / Bar #6</span>
-        </div>
-        <div class="event-row">
-            <span class="date">JULY 2026</span>
-            <span class="venue">Summer Festival Tour</span>
-        </div>
+        <h2>Events</h2> [cite: 25]
+        <p><strong>2 May 2026</strong> - La Sotterenea (Montréal)</p> [cite: 27, 28]
+        <p><strong>May 2026</strong> - Bar #2 / Bar #3</p> [cite: 29, 30, 31, 32]
+        <p><strong>June 2026</strong> - Bar #4 / Bar #5 / Bar #6</p> [cite: 33, 34, 36, 37, 39]
+        <p><strong>Summer 2026</strong> - Festival Tour</p> [cite: 40, 41, 45, 46, 50]
     </section>
 
     <section id="merch">
-        <h2>Merch</h2>
+        <h2>Merch</h2> [cite: 52]
         <div class="merch-grid">
-            <div class="merch-item">
-                <div class="merch-img">Photo T-Shirt 1</div>
-                <span>Limited Edition Tee</span>
-                <span class="price">$30</span>
-            </div>
-            <div class="merch-item">
-                <div class="merch-img">Photo Casquette</div>
-                <span>Official Cap</span>
-                <span class="price">$25</span>
-            </div>
-            <div class="merch-item">
-                <div class="merch-img">Photo Tote Bag</div>
-                <span>Tote Bag / Sac</span>
-                <span class="price">$20</span>
-            </div>
+            <div class="merch-item">Tee-Shirt 1 - $30</div> [cite: 56, 63]
+            <div class="merch-item">Tee-Shirt 2 - $30</div> [cite: 59, 64]
+            <div class="merch-item">Casquette - $25</div> [cite: 70, 76]
+            <div class="merch-item">Tote Bag - $20</div> [cite: 71, 77]
         </div>
-        <div style="margin-top: 30px; font-size: 0.9rem; border: 1px dashed var(--primary-orange); padding: 20px;">
-            [cite_start]<p><strong>Shipping:</strong> $20 flat rate across Canada via Canada Post[cite: 79].</p>
-            [cite_start]<p><strong>Montréal Local:</strong> Pick up your order in person at one of our shows or whenever we meet—no shipping needed[cite: 78].</p>
-        </div>
+        <p style="margin-top: 20px; font-style: italic;">
+            Montréal: Local pick-up available. [cite: 78] Canada: $20 flat-rate shipping. [cite: 79]
+        </p>
     </section>
 
     <section id="contact">
-        <h2>Contact Us</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-            <form>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="text" placeholder="Subject">
-                <textarea rows="5" placeholder="Message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <div>
-                <h3>Booking & Management</h3>
-                [cite_start]<p><strong>Management:</strong> roxy.thunder4@gmail.com [cite: 88]</p>
-                [cite_start]<p><strong>Booking:</strong> xxx@roxy-thunder.com [cite: 90]</p>
-                <br>
-                <p><em>Montréal, QC</em></p>
-            </div>
-        </div>
+        <h2>Contact Us</h2> [cite: 80]
+        <form>
+            <input type="text" placeholder="Name"> [cite: 81]
+            <input type="email" placeholder="Email"> [cite: 83]
+            <input type="text" placeholder="Subject"> [cite: 84]
+            <textarea rows="5" placeholder="Message"></textarea> [cite: 85]
+            <button type="submit">Send</button>
+        </form>
+        <p style="margin-top: 20px;">
+            Management: roxy.thunder4@gmail.com [cite: 87, 88]<br>
+            Booking: xxx@roxy-thunder.com [cite: 89, 90]
+        </p>
     </section>
 
-    <footer style="text-align: center; padding: 60px 20px; color: #444; font-size: 0.8rem;">
-        &copy; 2025 ROXY THUNDER. ALL RIGHTS RESERVED.
+    <footer style="text-align: center; padding: 40px; color: #444;">
+        &copy; 2025 Roxy Thunder
     </footer>
 
 </body>
