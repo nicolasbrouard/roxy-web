@@ -23,7 +23,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Hero Section with the Graphic Charter style */
+        /* Hero Section */
         header {
             background: linear-gradient(135deg, var(--primary-yellow), var(--primary-orange));
             background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)" opacity="0.3"/></svg>'), 
@@ -43,7 +43,6 @@
             text-shadow: 2px 2px 0px rgba(255,255,255,0.2);
         }
 
-        /* Torn Paper Boundary */
         header::after {
             content: "";
             position: absolute;
@@ -68,14 +67,7 @@
             font-size: 0.8rem;
         }
 
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
+        nav a { color: var(--white); text-decoration: none; margin: 0 15px; font-weight: bold; }
         nav a:hover { color: var(--primary-yellow); }
 
         section { padding: 80px 10%; max-width: 1100px; margin: auto; }
@@ -89,34 +81,6 @@
             margin-bottom: 30px;
         }
 
-        .social-bar { 
-            margin-top: 25px; 
-            font-weight: bold; 
-            font-size: 0.75rem; 
-            color: var(--black);
-            letter-spacing: 1px;
-        }
-
-        /* Merch Styling */
-        .merch-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .merch-item {
-            background: var(--gray);
-            padding: 30px 20px;
-            text-align: center;
-            border: 1px solid #333;
-        }
-        .merch-price { 
-            color: var(--primary-yellow); 
-            font-weight: bold; 
-            display: block; 
-            margin-top: 15px;
-            font-size: 1.2rem;
-        }
-
         /* Form Styling */
         form input, form textarea {
             width: 100%; padding: 12px; margin-bottom: 15px; background: #111; 
@@ -127,6 +91,11 @@
             background: var(--primary-orange); color: black; border: none; 
             padding: 15px 40px; font-weight: bold; cursor: pointer; text-transform: uppercase;
         }
+        button:hover { background: var(--primary-yellow); }
+
+        .merch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .merch-item { background: var(--gray); padding: 30px 20px; text-align: center; border: 1px solid #333; }
+        .merch-price { color: var(--primary-yellow); font-weight: bold; display: block; margin-top: 15px; font-size: 1.2rem; }
     </style>
 </head>
 <body>
@@ -141,68 +110,54 @@
 
     <header id="home">
         <h1 class="logo-text">Roxy Thunder</h1>
-        <div class="social-bar">INSTAGRAM • FACEBOOK • SPOTIFY • YOUTUBE • TIKTOK</div>
+        <div style="margin-top:25px; font-weight:bold; font-size:0.75rem; color:black;">INSTAGRAM • FACEBOOK • SPOTIFY • YOUTUBE • TIKTOK</div>
     </header>
 
     <section id="about">
         <h2>The Band</h2>
         <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Javier Guevara Garcia and Carmelo Fuizzotto) is a fresh, high-energy rock band rising from Montréal's vibrant scene.</p>
-        <p>Founded in 2025, they blend classic-rock power with modern attitude, delivering big riffs, catchy hooks, and electrifying presence.</p>
-        <p>In March 2026, they released their debut album, instantly marking their arrival as a rising force to watch. Loud, dynamic, and built for the stage, Roxy Thunder brings raw heart and unstoppable fire—a new force ready to shake the city and spark the next rock anthem.</p>
-    </section>
-
-    <section id="listen">
-        <h2>Listen</h2>
-        <div style="background: #1a1a1a; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border: 1px solid #333; margin-bottom: 20px;">
-            <p>[YouTube Video Embed Placeholder]</p>
-        </div>
-        <p style="text-align: center;"><a href="#" style="color: var(--primary-yellow); text-decoration: none; font-weight: bold; letter-spacing: 1px;">&rarr; LISTEN ON SPOTIFY</a></p>
+        <p>In March 2026, they released their debut album, marking their arrival as a rising force to watch. Loud, dynamic, and built for the stage, Roxy Thunder brings raw heart and unstoppable fire.</p>
     </section>
 
     <section id="events">
         <h2>Events</h2>
-        <div style="border-left: 2px solid #333; padding-left: 20px;">
-            <p><strong>2 May 2026:</strong> La Sotterenea, Montréal</p>
-            <p><strong>May 2026:</strong> Bar #2 & Bar #3</p>
-            <p><strong>June 2026:</strong> Local Bar Tour (#4, #5, #6)</p>
-            <p><strong>July - August 2026:</strong> Summer Festival Season</p>
-            <p><strong>September 2026:</strong> Festival Wrap & Bar #7</p>
-        </div>
+        <p><strong>2 May 2026:</strong> La Sotterenea, Montréal</p>
+        <p><strong>Summer 2026:</strong> Quebec Festival Tour</p>
     </section>
 
     <section id="merch">
         <h2>Merch</h2>
         <div class="merch-grid">
-            <div class="merch-item">Tee-Shirt (Designs 1-4) <span class="merch-price">$30</span></div>
+            <div class="merch-item">Tee-Shirt <span class="merch-price">$30</span></div>
             <div class="merch-item">Casquette <span class="merch-price">$25</span></div>
-            <div class="merch-item">Tote Bag / Sac <span class="merch-price">$20</span></div>
-        </div>
-        <div style="margin-top: 30px; font-size: 0.9rem; background: #111; padding: 20px; border: 1px dashed var(--primary-orange);">
-            <p><strong>Local Pickup:</strong> If you're in Montréal, pick up your merch in person at a show!</p>
-            <p><strong>Shipping:</strong> $20 flat-rate shipping across Canada via Canada Post.</p>
+            <div class="merch-item">Tote Bag <span class="merch-price">$20</span></div>
         </div>
     </section>
 
     <section id="contact">
         <h2>Contact Us</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-            <form>
-                <input type="text" placeholder="Last Name">
-                <input type="text" placeholder="First Name">
-                <input type="email" placeholder="Email">
-                <input type="text" placeholder="Subject">
-                <textarea rows="5" placeholder="Your Message"></textarea>
+            
+            <form action="https://formspree.io/f/your@email.com" method="POST">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject">
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                
+                <input type="text" name="_gotcha" style="display:none">
+                
                 <button type="submit">Send Message</button>
             </form>
+
             <div>
                 <p><strong>Management:</strong><br>roxy.thunder4@gmail.com</p>
                 <p><strong>Booking:</strong><br>xxx@roxy-thunder.com</p>
-                <p style="margin-top: 40px; color: #666;">Montréal, Quebec</p>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 60px 20px; color: #444; font-size: 0.8rem; border-top: 1px solid #111;">
+    <footer style="text-align: center; padding: 60px 20px; color: #444; font-size: 0.8rem;">
         &copy; 2025 ROXY THUNDER. ALL RIGHTS RESERVED.
     </footer>
 
