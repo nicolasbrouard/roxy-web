@@ -38,18 +38,18 @@
             scroll-behavior: smooth;
         }
 
-        /* Fixed Background Graphics */
+        /* Fixed Background Graphics - Increased visibility */
         .bg-graphic-right {
             position: fixed;
             top: 0;
             right: 0;
-            width: 40%;
+            width: 35%;
             height: 100vh;
             background-image: url('sidebar.png');
-            background-size: contain;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: right center;
-            opacity: 0.12;
+            opacity: 0.4;
             z-index: -1;
             pointer-events: none;
         }
@@ -58,13 +58,13 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 40%;
+            width: 35%;
             height: 100vh;
             background-image: url('moon.png');
-            background-size: contain;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: left center;
-            opacity: 0.12;
+            opacity: 0.4;
             z-index: -1;
             pointer-events: none;
         }
@@ -75,8 +75,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Gradient ensures center content remains perfectly legible */
-            background: radial-gradient(circle at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.95) 100%);
+            /* Modified gradient to allow side graphics to pop while keeping center readable */
+            background: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0.9) 75%, rgba(0,0,0,0.2) 100%);
             z-index: -1;
             pointer-events: none;
         }
@@ -291,7 +291,7 @@
         body.lang-fr span[lang="en"] { display: none; }
 
         @media (max-width: 1024px) {
-            .bg-graphic-left, .bg-graphic-right { width: 50%; opacity: 0.08; }
+            .bg-graphic-left, .bg-graphic-right { width: 50%; opacity: 0.2; }
         }
 
         @media (max-width: 768px) {
