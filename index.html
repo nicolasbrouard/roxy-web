@@ -93,21 +93,24 @@
 
         /* Hero / Header Section */
         header {
-            background: linear-gradient(135deg, var(--primary-yellow), var(--primary-orange));
-            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)" opacity="0.35"/></svg>'), 
-                              linear-gradient(135deg, var(--primary-yellow), var(--primary-orange));
+            background-image: url('header.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             padding: 140px 20px 100px;
             text-align: center;
             position: relative;
+            /* Added a dark overlay to make text pop against the image */
+            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
         }
 
         .logo-text {
             font-family: 'Qwitcher Grypen', cursive;
             font-size: clamp(5rem, 18vw, 12rem);
-            color: var(--black);
+            color: var(--white); /* Changed to white for visibility on image background */
             margin: 0;
             line-height: 0.8;
-            filter: drop-shadow(2px 2px 0px rgba(255,255,255,0.15));
+            filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.8));
         }
 
         .social-bar-top {
@@ -115,11 +118,12 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            color: var(--black);
+            color: var(--primary-yellow); /* Changed color to brand primary for pop */
             font-weight: 800;
             text-transform: uppercase;
             font-size: 0.75rem;
             letter-spacing: 2px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
         }
 
         header::after {
