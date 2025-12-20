@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roxy Thunder | Official Site</title>
+    <style>
+        :root {
+            --primary-orange: #f37021;
+            --primary-yellow: #fdb813;
+            --black: #000000;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Arial Black', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Hero / Header Section */
+        header {
+            background: linear-gradient(to right, var(--primary-yellow), var(--primary-orange));
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)" opacity="0.4"/></svg>'), 
+                              linear-gradient(to right, var(--primary-yellow), var(--primary-orange)); /* Gritty texture  */
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 5rem;
+            text-transform: uppercase;
+            color: var(--black);
+            margin: 0;
+            letter-spacing: -2px;
+        }
+
+        /* Torn paper effect  */
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: var(--black);
+            clip-path: polygon(0% 100%, 5% 80%, 10% 95%, 15% 75%, 20% 90%, 25% 70%, 30% 85%, 35% 65%, 40% 80%, 45% 60%, 50% 75%, 55% 55%, 60% 70%, 65% 50%, 70% 65%, 75% 45%, 80% 60%, 85% 40%, 90% 55%, 95% 35%, 100% 50%, 100% 100%);
+        }
+
+        nav {
+            background: rgba(0,0,0,0.8);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-orange);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 80px 10% 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: var(--primary-yellow);
+            font-size: 2.5rem;
+            border-left: 8px solid var(--primary-orange);
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Events Table  */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        tr:hover { background: #111; }
+
+        /* Merch Grid [cite: 54-77] */
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .merch-item {
+            background: #111;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #222;
+        }
+
+        .merch-item .photo-placeholder {
+            background: #222;
+            height: 250px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Contact Form [cite: 81-85] */
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #111;
+            color: white;
+            border: 1px solid var(--primary-orange);
+        }
+
+        .social-icons {
+            margin: 20px 0;
+            font-size: 0.8rem;
+            color: var(--primary-yellow);
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a> [cite: 5]
+        <a href="#listen">Listen</a> [cite: 6]
+        <a href="#events">Events</a> [cite: 7]
+        <a href="#merch">Merch</a> [cite: 8]
+        <a href="#contact">Contact</a> [cite: 9]
+    </nav>
+
+    <header id="home">
+        <h1 class="logo">Roxy Thunder</h1> [cite: 1]
+        <div class="social-icons">INSTA • FACEBOOK • SPOTIFY • YOUTUBE • TIKTOK</div> [cite: 10]
+    </header>
+
+    <section>
+        <h2>About</h2>
+        <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Javier Guevara Garcia and Carmelo Fuizzotto) is a fresh, high-energy rock band rising from Montréal's vibrant scene. [cite: 11]</p>
+        <p>Founded in 2025, they blend classic-rock power with modern attitude, delivering big riffs, catchy hooks, and electrifying presence. [cite: 12]</p>
+        <p>In March 2026, they released their debut album, instantly marking their arrival as a rising force to watch. [cite: 13]</p>
+        <p>Loud, dynamic, and built for the stage, Roxy Thunder brings raw heart and unstoppable fire—a new force ready to shake the city and spark the next rock anthem. [cite: 14]</p>
+    </section>
+
+    <section id="listen">
+        <h2>Listen</h2> [cite: 16]
+        <div style="background: #222; height: 400px; display: flex; align-items: center; justify-content: center;">
+            [VIDEO PLAYER PLACEHOLDER] [cite: 19]
+        </div>
+        <p style="text-align: center; margin-top: 20px;">
+            <a href="#" style="color: var(--primary-yellow);">Listen on Spotify</a> [cite: 24]
+        </p>
+    </section>
+
+    <section id="events">
+        <h2>Events</h2> [cite: 25]
+        <table>
+            <tr><td>2 May 2026</td><td><strong>La Sotterenea</strong></td><td>Montréal</td></tr> [cite: 27, 28]
+            <tr><td>X May 2026</td><td>Bar #2</td><td>Montréal</td></tr> [cite: 29, 30]
+            <tr><td>X June 2026</td><td>Bar #4</td><td>Montréal</td></tr> [cite: 33, 34]
+            <tr><td>X July 2026</td><td>Festival 1</td><td>Tour</td></tr> [cite: 40, 41]
+            <tr><td>X August 2026</td><td>Festival 1</td><td>Tour</td></tr> [cite: 45, 46]
+        </table>
+    </section>
+
+    <section id="merch">
+        <h2>Merch</h2> [cite: 52]
+        <div class="merch-grid">
+            <div class="merch-item"><div class="photo-placeholder">Tee-Shirt 1</div>$30</div> [cite: 56, 63]
+            <div class="merch-item"><div class="photo-placeholder">Tee-Shirt 2</div>$30</div> [cite: 59, 64]
+            <div class="merch-item"><div class="photo-placeholder">Casquette</div>$25</div> [cite: 70, 76]
+            <div class="merch-item"><div class="photo-placeholder">Tote Bag</div>$20</div> [cite: 71, 77]
+        </div>
+        <p style="font-size: 0.9rem; margin-top: 30px;">
+            <em>Pickup in Montréal available at shows. [cite: 78] Flat $20 shipping across Canada. [cite: 79]</em>
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2> [cite: 80]
+        <form>
+            <input type="text" placeholder="Name"> [cite: 81]
+            <input type="text" placeholder="First Name"> [cite: 82]
+            <input type="email" placeholder="Email"> [cite: 83]
+            <input type="text" placeholder="Subject"> [cite: 84]
+            <textarea rows="5" placeholder="Your Message"></textarea> [cite: 85]
+            <button type="submit" style="background: var(--primary-orange); border: none; padding: 10px 20px; font-weight: bold; cursor: pointer;">SEND</button>
+        </form>
+        <div style="margin-top: 40px;">
+            <p>Management: roxy.thunder4@gmail.com [cite: 87, 88]</p>
+            <p>Booking: xxx@roxy-thunder.com [cite: 89, 90]</p>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; font-size: 0.8rem; border-top: 1px solid #222;">
+        &copy; 2025 Roxy Thunder. All rights reserved.
+    </footer>
+
+</body>
+</html>
