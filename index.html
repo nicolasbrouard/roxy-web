@@ -4,162 +4,460 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roxy Thunder | Official Site</title>
-    <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons (via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
         :root {
             --primary-orange: #f37021;
             --primary-yellow: #fdb813;
             --black: #000000;
             --white: #ffffff;
-            --gray: #1a1a1a;
+            --gray-dark: #121212;
+            --gray-light: #1e1e1e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
             background-color: var(--black);
             color: var(--white);
-            font-family: 'Helvetica', 'Arial', sans-serif;
-            margin: 0;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
+            overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        /* Hero Section */
+        /* Language Toggle Button */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+        }
+
+        .lang-btn {
+            background: var(--primary-orange);
+            color: black;
+            border: 2px solid black;
+            padding: 8px 15px;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: var(--primary-yellow);
+            transform: translateY(-2px);
+        }
+
+        /* Hero / Header Section */
         header {
             background: linear-gradient(135deg, var(--primary-yellow), var(--primary-orange));
-            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)" opacity="0.3"/></svg>'), 
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)" opacity="0.35"/></svg>'), 
                               linear-gradient(135deg, var(--primary-yellow), var(--primary-orange));
-            padding: 120px 20px;
+            padding: 140px 20px 100px;
             text-align: center;
             position: relative;
-            overflow: hidden;
         }
 
         .logo-text {
             font-family: 'Qwitcher Grypen', cursive;
-            font-size: clamp(6rem, 18vw, 12rem);
+            font-size: clamp(5rem, 18vw, 12rem);
             color: var(--black);
             margin: 0;
-            line-height: 0.7;
-            text-shadow: 2px 2px 0px rgba(255,255,255,0.2);
+            line-height: 0.8;
+            filter: drop-shadow(2px 2px 0px rgba(255,255,255,0.15));
         }
 
+        .social-bar-top {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: var(--black);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        /* Torn Paper Effect */
         header::after {
             content: "";
             position: absolute;
-            bottom: -1px;
+            bottom: -2px;
             left: 0;
             width: 100%;
-            height: 60px;
+            height: 70px;
             background-color: var(--black);
-            clip-path: polygon(0% 100%, 0% 35%, 5% 65%, 10% 30%, 15% 70%, 20% 40%, 25% 75%, 30% 35%, 35% 60%, 40% 30%, 45% 70%, 50% 40%, 55% 65%, 60% 30%, 65% 75%, 70% 35%, 75% 60%, 80% 30%, 85% 70%, 90% 40%, 95% 65%, 100% 30%, 100% 100%);
+            clip-path: polygon(
+                0% 100%, 0% 40%, 4% 65%, 8% 35%, 12% 70%, 16% 40%, 20% 75%, 24% 45%, 
+                28% 65%, 32% 35%, 36% 75%, 40% 45%, 44% 65%, 48% 30%, 52% 70%, 56% 40%, 
+                60% 75%, 64% 45%, 68% 65%, 72% 35%, 76% 75%, 80% 45%, 84% 65%, 88% 30%, 
+                92% 70%, 96% 40%, 100% 70%, 100% 100%
+            );
         }
 
         nav {
-            background: rgba(0,0,0,0.9);
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
             padding: 20px;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             text-align: center;
             border-bottom: 3px solid var(--primary-orange);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
         }
 
-        nav a { color: var(--white); text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
         nav a:hover { color: var(--primary-yellow); }
 
-        section { padding: 80px 10%; max-width: 1100px; margin: auto; }
+        section {
+            padding: 100px 10%;
+            max-width: 1200px;
+            margin: auto;
+        }
 
         h2 {
             color: var(--primary-yellow);
-            font-size: 2.5rem;
+            font-size: 3rem;
             text-transform: uppercase;
-            border-left: 10px solid var(--primary-orange);
+            margin-bottom: 40px;
+            border-left: 12px solid var(--primary-orange);
             padding-left: 20px;
+            line-height: 1;
+        }
+
+        p { margin-bottom: 20px; font-size: 1.1rem; color: #ccc; }
+        strong { color: var(--white); }
+
+        /* Listen Section */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: var(--gray-light);
+            border: 1px solid #333;
             margin-bottom: 30px;
         }
 
-        /* Form Styling */
-        form input, form textarea {
-            width: 100%; padding: 12px; margin-bottom: 15px; background: #111; 
-            border: 1px solid #444; color: white; box-sizing: border-box;
-            font-family: inherit;
+        .video-placeholder {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+            text-transform: uppercase; color: #444; font-weight: bold;
         }
-        button {
-            background: var(--primary-orange); color: black; border: none; 
-            padding: 15px 40px; font-weight: bold; cursor: pointer; text-transform: uppercase;
-        }
-        button:hover { background: var(--primary-yellow); }
 
-        .merch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .merch-item { background: var(--gray); padding: 30px 20px; text-align: center; border: 1px solid #333; }
-        .merch-price { color: var(--primary-yellow); font-weight: bold; display: block; margin-top: 15px; font-size: 1.2rem; }
+        .spotify-link {
+            display: inline-block;
+            background-color: #1DB954;
+            color: black;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Events */
+        .event-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .event-date { font-weight: 800; color: var(--primary-orange); width: 180px; font-size: 1.2rem; }
+        .event-venue { flex-grow: 1; font-size: 1.1rem; }
+        .event-link { color: var(--primary-yellow); text-decoration: none; font-weight: bold; text-transform: uppercase; }
+
+        /* Merch */
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .merch-card {
+            background: var(--gray-dark);
+            border: 1px solid #222;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .merch-image {
+            background: var(--gray-light);
+            aspect-ratio: 1/1;
+            margin-bottom: 20px;
+            display: flex; align-items: center; justify-content: center;
+            color: #444; font-weight: bold;
+        }
+
+        .merch-price { color: var(--primary-yellow); font-weight: 800; font-size: 1.5rem; }
+
+        .merch-info-box {
+            margin-top: 40px;
+            background: #0a0a0a;
+            border: 2px dashed var(--primary-orange);
+            padding: 30px;
+        }
+
+        /* Contact */
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 15px; margin-bottom: 15px; background: var(--gray-dark);
+            border: 1px solid #333; color: white; font-family: inherit;
+        }
+        .btn-send {
+            background: var(--primary-orange); color: black; border: none;
+            padding: 15px 40px; font-weight: 900; text-transform: uppercase;
+            cursor: pointer; width: 100%;
+        }
+
+        footer { text-align: center; padding: 80px 20px; color: #444; font-size: 0.8rem; border-top: 1px solid #111; }
+
+        /* Language visibility logic */
+        [lang="fr"] { display: none; }
+        body.lang-fr [lang="en"] { display: none; }
+        body.lang-fr [lang="fr"] { display: block; }
+        body.lang-fr [lang="fr-inline"] { display: inline; }
+        body.lang-fr [lang="en-inline"] { display: none; }
+
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; }
+            .event-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+        }
     </style>
 </head>
 <body>
 
+    <div class="lang-switch">
+        <button class="lang-btn" onclick="toggleLanguage()" id="langToggle">FR</button>
+    </div>
+
     <nav>
-        <a href="#home">Home</a>
-        <a href="#listen">Listen</a>
-        <a href="#events">Events</a>
+        <a href="#home">
+            <span lang="en">Home</span>
+            <span lang="fr">Accueil</span>
+        </a>
+        <a href="#listen">
+            <span lang="en">Listen</span>
+            <span lang="fr">Écouter</span>
+        </a>
+        <a href="#events">
+            <span lang="en">Events</span>
+            <span lang="fr">Événements</span>
+        </a>
         <a href="#merch">Merch</a>
-        <a href="#contact">Contact us</a>
+        <a href="#contact">
+            <span lang="en">Contact us</span>
+            <span lang="fr">Contact</span>
+        </a>
     </nav>
 
     <header id="home">
         <h1 class="logo-text">Roxy Thunder</h1>
-        <div style="margin-top:25px; font-weight:bold; font-size:0.75rem; color:black;">INSTAGRAM • FACEBOOK • SPOTIFY • YOUTUBE • TIKTOK</div>
+        <div class="social-bar-top">
+            <span>Insta</span> • <span>Facebook</span> • <span>Spotify</span> • <span>YouTube</span> • <span>TikTok</span>
+        </div>
     </header>
 
     <section id="about">
-        <h2>The Band</h2>
-        <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Javier Guevara Garcia and Carmelo Fuizzotto) is a fresh, high-energy rock band rising from Montréal's vibrant scene.</p>
-        <p>In March 2026, they released their debut album, marking their arrival as a rising force to watch. Loud, dynamic, and built for the stage, Roxy Thunder brings raw heart and unstoppable fire.</p>
+        <h2>
+            <span lang="en">The Band</span>
+            <span lang="fr">Le Groupe</span>
+        </h2>
+        <div lang="en">
+            <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Javier Guevara Garcia and Carmelo Fuizzotto) is a fresh, high-energy rock band rising from Montréal's vibrant scene.</p>
+            <p>Founded in 2025, they blend classic-rock power with modern attitude, delivering big riffs, catchy hooks, and electrifying presence. In March 2026, they released their debut album, instantly marking their arrival as a rising force to watch.</p>
+            <p>Loud, dynamic, and built for the stage, Roxy Thunder brings raw heart and unstoppable fire—a new force ready to shake the city and spark the next rock anthem.</p>
+        </div>
+        <div lang="fr">
+            <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Javier Guevara Garcia et Carmelo Fuizzotto) est un nouveau groupe rock énergique issu de la scène vibrante de Montréal.</p>
+            <p>Fondé en 2025, le groupe fusionne la puissance du rock classique avec une attitude moderne, offrant des riffs massifs, des refrains accrocheurs et une présence électrisante. En mars 2026, ils ont lancé leur premier album, marquant instantanément leur arrivée comme une force montante à surveiller.</p>
+            <p>Bruyant, dynamique et taillé pour la scène, Roxy Thunder apporte une authenticité brute et un feu inépuisable — une nouvelle force prête à secouer la ville et à créer le prochain hymne rock.</p>
+        </div>
+    </section>
+
+    <section id="listen">
+        <h2>
+            <span lang="en">Listen</span>
+            <span lang="fr">Écouter</span>
+        </h2>
+        <div class="video-container">
+            <div class="video-placeholder">
+                <span lang="en">[ Latest YouTube Video Embed ]</span>
+                <span lang="fr">[ Dernière vidéo YouTube ]</span>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="#" class="spotify-link">
+                <span lang="en">Follow on Spotify</span>
+                <span lang="fr">Suivre sur Spotify</span>
+            </a>
+        </div>
     </section>
 
     <section id="events">
-        <h2>Events</h2>
-        <p><strong>2 May 2026:</strong> La Sotterenea, Montréal</p>
-        <p><strong>Summer 2026:</strong> Quebec Festival Tour</p>
+        <h2>
+            <span lang="en">Events</span>
+            <span lang="fr">Événements</span>
+        </h2>
+        <div class="event-list">
+            <div class="event-item">
+                <div class="event-date">02 MAI 2026</div>
+                <div class="event-venue">La Sotterenea, Montréal</div>
+                <a href="#" class="event-link">
+                    <span lang="en">Tickets & Info</span>
+                    <span lang="fr">Billets & Info</span>
+                </a>
+            </div>
+            <div class="event-item">
+                <div class="event-date">MAI 2026</div>
+                <div class="event-venue">Bar #2 / Bar #3</div>
+                <span class="event-link">
+                    <span lang="en">Coming Soon</span>
+                    <span lang="fr">À venir</span>
+                </span>
+            </div>
+            <div class="event-item">
+                <div class="event-date">JUIN 2026</div>
+                <div class="event-venue">Local Club Tour (#4, #5, #6)</div>
+                <span class="event-link">
+                    <span lang="en">Coming Soon</span>
+                    <span lang="fr">À venir</span>
+                </span>
+            </div>
+            <div class="event-item">
+                <div class="event-date">JUILLET 2026</div>
+                <div class="event-venue">Festival Season - Main Stage</div>
+                <span class="event-link">Info</span>
+            </div>
+        </div>
     </section>
 
     <section id="merch">
         <h2>Merch</h2>
         <div class="merch-grid">
-            <div class="merch-item">Tee-Shirt <span class="merch-price">$30</span></div>
-            <div class="merch-item">Casquette <span class="merch-price">$25</span></div>
-            <div class="merch-item">Tote Bag <span class="merch-price">$20</span></div>
+            <div class="merch-card">
+                <div class="merch-image">Tee-Shirt Design 1</div>
+                <div class="merch-title">Logo Tee</div>
+                <div class="merch-price">$30</div>
+            </div>
+            <div class="merch-card">
+                <div class="merch-image">Official Hat</div>
+                <div class="merch-title">Casquette</div>
+                <div class="merch-price">$25</div>
+            </div>
+            <div class="merch-card">
+                <div class="merch-image">Tote Bag / Sac</div>
+                <div class="merch-title">Roxy Tote</div>
+                <div class="merch-price">$20</div>
+            </div>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-            
-            <form action="https://formspree.io/f/your@email.com" method="POST">
-                <input type="text" name="first_name" placeholder="First Name" required>
-                <input type="text" name="last_name" placeholder="Last Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <input type="text" name="subject" placeholder="Subject">
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                
-                <input type="text" name="_gotcha" style="display:none">
-                
-                <button type="submit">Send Message</button>
-            </form>
-
-            <div>
-                <p><strong>Management:</strong><br>roxy.thunder4@gmail.com</p>
-                <p><strong>Booking:</strong><br>xxx@roxy-thunder.com</p>
+        <div class="merch-info-box">
+            <div lang="en">
+                <p><strong>Montréal Local?</strong> You can pick up your merch in person at one of our shows or schedule a meeting to avoid shipping costs!</p>
+                <p><strong>Canada Shipping:</strong> Flat rate of $20 via Canada Post for all other orders.</p>
+            </div>
+            <div lang="fr">
+                <p><strong>Résident de Montréal?</strong> Vous pouvez ramasser votre marchandise en personne lors d'un spectacle ou planifier une rencontre pour éviter les frais de livraison!</p>
+                <p><strong>Livraison Canada :</strong> Tarif fixe de 20 $ via Postes Canada pour toutes les autres commandes.</p>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 60px 20px; color: #444; font-size: 0.8rem;">
-        &copy; 2025 ROXY THUNDER. ALL RIGHTS RESERVED.
+    <section id="contact">
+        <h2>
+            <span lang="en">Contact Us</span>
+            <span lang="fr">Contactez-nous</span>
+        </h2>
+        <div class="contact-container">
+            <div class="contact-form">
+                <form action="https://formspree.io/f/your@email.com" method="POST">
+                    <div style="display: flex; gap: 15px;">
+                        <input type="text" name="firstName" placeholder="Prénom / First Name" required>
+                        <input type="text" name="lastName" placeholder="Nom / Last Name" required>
+                    </div>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="subject" placeholder="Objet / Subject">
+                    <textarea name="message" rows="6" placeholder="Message..." required></textarea>
+                    
+                    <button type="submit" class="btn-send">
+                        <span lang="en">Send Message</span>
+                        <span lang="fr">Envoyer</span>
+                    </button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div style="margin-bottom: 30px;">
+                    <h3>Management</h3>
+                    <p>roxy.thunder4@gmail.com</p>
+                </div>
+                <div>
+                    <h3>Booking</h3>
+                    <p>xxx@roxy-thunder.com</p>
+                </div>
+                <div style="margin-top: 50px;">
+                    <p style="font-size: 0.9rem; font-style: italic;">Montréal, Québec, Canada</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ROXY THUNDER. <span lang="en">ALL RIGHTS RESERVED.</span><span lang="fr">TOUS DROITS RÉSERVÉS.</span></p>
+        <p style="margin-top: 10px;">
+            <span lang="en">PROUDLY MADE IN MONTRÉAL</span>
+            <span lang="fr">FIÈREMENT FAIT À MONTRÉAL</span>
+        </p>
     </footer>
 
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            const btn = document.getElementById('langToggle');
+            const isFr = body.classList.toggle('lang-fr');
+            btn.textContent = isFr ? 'EN' : 'FR';
+            
+            // Optional: Store preference
+            localStorage.setItem('roxy-lang', isFr ? 'fr' : 'en');
+        }
+
+        // Check for saved preference or system language
+        window.onload = () => {
+            const saved = localStorage.getItem('roxy-lang');
+            if (saved === 'fr' || (!saved && navigator.language.startsWith('fr'))) {
+                toggleLanguage();
+            }
+            lucide.createIcons();
+        };
+    </script>
 </body>
 </html>
