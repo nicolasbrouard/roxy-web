@@ -17,32 +17,33 @@
         body {
             background-color: var(--black);
             color: var(--white);
-            font-family: 'Arial', sans-serif;
+            font-family: 'Helvetica', 'Arial', sans-serif;
             margin: 0;
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* Hero / Header Section [cite: 4] */
+        /* Hero / Header Section reflecting the Graphic Charter [cite: 4] */
         header {
             background: linear-gradient(135deg, var(--primary-yellow), var(--primary-orange));
             background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)" opacity="0.3"/></svg>'), 
                               linear-gradient(135deg, var(--primary-yellow), var(--primary-orange));
-            padding: 100px 20px;
+            padding: 120px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         .logo-text {
-            font-family: 'Qwitcher Grypen', cursive; /* Applied requested font */
-            font-size: clamp(5rem, 15vw, 10rem);
+            font-family: 'Qwitcher Grypen', cursive;
+            font-size: clamp(6rem, 18vw, 12rem);
             color: var(--black);
             margin: 0;
-            line-height: 0.8;
+            line-height: 0.7;
+            text-shadow: 2px 2px 0px rgba(255,255,255,0.2);
         }
 
-        /* Torn Paper Edge [cite: 4] */
+        /* Torn Paper Edge effect [cite: 4] */
         header::after {
             content: "";
             position: absolute;
@@ -51,33 +52,32 @@
             width: 100%;
             height: 60px;
             background-color: var(--black);
-            clip-path: polygon(0% 100%, 0% 40%, 5% 70%, 12% 35%, 18% 65%, 25% 40%, 32% 75%, 40% 45%, 48% 65%, 55% 35%, 62% 70%, 70% 40%, 78% 60%, 85% 30%, 92% 65%, 100% 40%, 100% 100%);
+            clip-path: polygon(0% 100%, 0% 35%, 5% 65%, 10% 30%, 15% 70%, 20% 40%, 25% 75%, 30% 35%, 35% 60%, 40% 30%, 45% 70%, 50% 40%, 55% 65%, 60% 30%, 65% 75%, 70% 35%, 75% 60%, 80% 30%, 85% 70%, 90% 40%, 95% 65%, 100% 30%, 100% 100%);
         }
 
         nav {
-            background: rgba(0,0,0,0.95);
+            background: rgba(0,0,0,0.9);
             padding: 20px;
             position: sticky;
             top: 0;
             z-index: 100;
             text-align: center;
             border-bottom: 3px solid var(--primary-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
         }
 
         nav a {
             color: var(--white);
             text-decoration: none;
             margin: 0 15px;
-            text-transform: uppercase;
             font-weight: bold;
-            font-size: 0.9rem;
         }
 
-        section {
-            padding: 60px 10%;
-            max-width: 1100px;
-            margin: auto;
-        }
+        nav a:hover { color: var(--primary-yellow); }
+
+        section { padding: 80px 10%; max-width: 1100px; margin: auto; }
 
         h2 {
             color: var(--primary-yellow);
@@ -85,39 +85,34 @@
             text-transform: uppercase;
             border-left: 10px solid var(--primary-orange);
             padding-left: 20px;
+            margin-bottom: 30px;
         }
 
+        /* Social Icons placeholder [cite: 10] */
+        .social-bar { margin-top: 20px; font-weight: bold; font-size: 0.7rem; color: var(--black); }
+
+        /* Merch Grid styling [cite: 54-77] */
         .merch-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-
         .merch-item {
             background: var(--gray);
             padding: 20px;
             text-align: center;
             border: 1px solid #333;
         }
+        .merch-price { color: var(--primary-yellow); font-weight: bold; display: block; margin-top: 10px; }
 
-        button {
-            background: var(--primary-orange);
-            color: black;
-            border: none;
-            padding: 15px 40px;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
+        /* Contact Form styling [cite: 81-85] */
+        form input, form textarea {
+            width: 100%; padding: 12px; margin-bottom: 15px; background: #111; 
+            border: 1px solid #444; color: white; box-sizing: border-box;
         }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            background: #111;
-            border: 1px solid #444;
-            color: white;
-            box-sizing: border-box;
+        button {
+            background: var(--primary-orange); color: black; border: none; 
+            padding: 15px 40px; font-weight: bold; cursor: pointer; text-transform: uppercase;
         }
     </style>
 </head>
@@ -128,15 +123,15 @@
         <a href="#listen">Listen</a> [cite: 6]
         <a href="#events">Events</a> [cite: 7]
         <a href="#merch">Merch</a> [cite: 8]
-        <a href="#contact">Contact</a> [cite: 9]
+        <a href="#contact">Contact us</a> [cite: 9]
     </nav>
 
     <header id="home">
         <h1 class="logo-text">Roxy Thunder</h1> [cite: 1]
-        <div style="margin-top: 20px; font-weight: bold;">INSTAGRAM / FACEBOOK / SPOTIFY / YOUTUBE / TIKTOK</div> [cite: 10]
+        <div class="social-bar">INSTAGRAM • FACEBOOK • SPOTIFY • YOUTUBE • TIKTOK</div> [cite: 10]
     </header>
 
-    <section id="about">
+    <section>
         <h2>The Band</h2>
         <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Javier Guevara Garcia and Carmelo Fuizzotto) is a fresh, high-energy rock band rising from Montréal's vibrant scene. [cite: 11]</p>
         <p>Founded in 2025, they blend classic-rock power with modern attitude, delivering big riffs, catchy hooks, and electrifying presence. [cite: 12]</p>
@@ -146,32 +141,29 @@
 
     <section id="listen">
         <h2>Listen</h2> [cite: 16]
-        <div style="background: #1a1a1a; width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border: 1px solid #333;">
-            <p>Video Player Placeholder</p> [cite: 19]
+        <div style="background: #1a1a1a; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border: 1px solid #333; margin-bottom: 20px;">
+            <p>Latest Video Content</p> [cite: 19]
         </div>
-        <p style="text-align: center; margin-top: 20px;">
-            <a href="#" style="color: var(--primary-yellow); text-decoration: none;">LISTEN ON SPOTIFY</a> [cite: 24]
-        </p>
+        <p style="text-align: center;"><a href="#" style="color: var(--primary-yellow); text-decoration: none; font-weight: bold;">LISTEN ON SPOTIFY</a> [cite: 24]</p>
     </section>
 
     <section id="events">
         <h2>Events</h2> [cite: 25]
-        <p><strong>2 May 2026</strong> - La Sotterenea (Montréal)</p> [cite: 27, 28]
-        <p><strong>May 2026</strong> - Bar #2 / Bar #3</p> [cite: 29, 30, 31, 32]
-        <p><strong>June 2026</strong> - Bar #4 / Bar #5 / Bar #6</p> [cite: 33, 34, 36, 37, 39]
-        <p><strong>Summer 2026</strong> - Festival Tour</p> [cite: 40, 41, 45, 46, 50]
+        <p><strong>2 May 2026:</strong> La Sotterenea, Montréal [cite: 27, 28]</p>
+        <p><strong>May 2026:</strong> Bar #2 & Bar #3 [cite: 29-32]</p>
+        <p><strong>June 2026:</strong> Local Bar Tour (#4, #5, #6) [cite: 33-39]</p>
+        <p><strong>July - August 2026:</strong> Festival Season [cite: 40-49]</p>
     </section>
 
     <section id="merch">
         <h2>Merch</h2> [cite: 52]
         <div class="merch-grid">
-            <div class="merch-item">Tee-Shirt 1 - $30</div> [cite: 56, 63]
-            <div class="merch-item">Tee-Shirt 2 - $30</div> [cite: 59, 64]
-            <div class="merch-item">Casquette - $25</div> [cite: 70, 76]
-            <div class="merch-item">Tote Bag - $20</div> [cite: 71, 77]
+            <div class="merch-item">Tee-Shirt (Designs 1-4) <span class="merch-price">$30</span></div> [cite: 56, 59, 62, 72, 63-65, 75]
+            <div class="merch-item">Casquette <span class="merch-price">$25</span></div> [cite: 70, 76]
+            <div class="merch-item">Tote Bag / Sac <span class="merch-price">$20</span></div> [cite: 71, 74, 77]
         </div>
-        <p style="margin-top: 20px; font-style: italic;">
-            Montréal: Local pick-up available. [cite: 78] Canada: $20 flat-rate shipping. [cite: 79]
+        <p style="margin-top: 30px; font-size: 0.9rem;">
+            <em>In Montréal? Pick up in person at a show. [cite: 78] Elsewhere in Canada? $20 flat-rate shipping. [cite: 79]</em>
         </p>
     </section>
 
@@ -179,19 +171,20 @@
         <h2>Contact Us</h2> [cite: 80]
         <form>
             <input type="text" placeholder="Name"> [cite: 81]
+            <input type="text" placeholder="First Name"> [cite: 82]
             <input type="email" placeholder="Email"> [cite: 83]
             <input type="text" placeholder="Subject"> [cite: 84]
             <textarea rows="5" placeholder="Message"></textarea> [cite: 85]
             <button type="submit">Send</button>
         </form>
-        <p style="margin-top: 20px;">
-            Management: roxy.thunder4@gmail.com [cite: 87, 88]<br>
-            Booking: xxx@roxy-thunder.com [cite: 89, 90]
-        </p>
+        <div style="margin-top: 40px;">
+            <p><strong>Management:</strong> roxy.thunder4@gmail.com [cite: 87, 88]</p>
+            <p><strong>Booking:</strong> xxx@roxy-thunder.com [cite: 89, 90]</p>
+        </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; color: #444;">
-        &copy; 2025 Roxy Thunder
+    <footer style="text-align: center; padding: 40px; color: #444; font-size: 0.8rem;">
+        &copy; 2025 Roxy Thunder. All rights reserved.
     </footer>
 
 </body>
