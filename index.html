@@ -36,24 +36,32 @@
             line-height: 1.6;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            /* Background Image Setup */
-            background-image: url('2025-12-19 - Charte graphique-1.png');
-            background-attachment: fixed;
-            background-position: right center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-blend-mode: multiply; /* Blends with the black background */
         }
 
-        /* Overlay to make the image subtle and ensure text readability */
-        body::before {
-            content: "";
+        /* Fixed Background Graphic */
+        .bg-graphic {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100vh;
+            background-image: url('2025-12-19 - Charte graphique-1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right center;
+            opacity: 0.15; /* Adjusted for visibility */
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Gradient overlay to ensure text is always readable on the left */
+        .bg-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0.7) 100%);
+            background: linear-gradient(to right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
             z-index: -1;
             pointer-events: none;
         }
@@ -255,18 +263,12 @@
         footer { text-align: center; padding: 80px 20px; color: #444; font-size: 0.8rem; border-top: 1px solid #111; position: relative; z-index: 1; }
 
         /* --- LANGUAGE LOGIC --- */
-        
-        /* Hide French by default */
         [lang="fr"] { display: none; }
-        
-        /* When lang-fr class is on body, swap visibility */
         body.lang-fr [lang="en"] { display: none; }
         body.lang-fr [lang="fr"] { display: block; }
         
-        /* Keep inline elements inline */
         span[lang="fr"] { display: none; }
         body.lang-fr span[lang="fr"] { display: inline; }
-        
         span[lang="en"] { display: inline; }
         body.lang-fr span[lang="en"] { display: none; }
 
@@ -274,12 +276,16 @@
             .contact-container { grid-template-columns: 1fr; }
             .event-item { flex-direction: column; align-items: flex-start; gap: 10px; }
             nav a { margin: 0 8px; font-size: 0.75rem; }
-            body { background-image: none; } /* Hide on small screens for better readability */
-            body::before { background: var(--black); }
+            .bg-graphic { display: none; }
+            .bg-overlay { background: var(--black); }
         }
     </style>
 </head>
 <body id="bodyTag">
+
+    <!-- Background Elements -->
+    <div class="bg-graphic"></div>
+    <div class="bg-overlay"></div>
 
     <div class="lang-switch">
         <button class="lang-btn" onclick="toggleLanguage()" id="langToggle">FR</button>
