@@ -384,22 +384,30 @@
             <div class="contact-form">
                 <form action="https://formspree.io/f/xojvgken" method="POST">
                     <div style="display: flex; gap: 15px;">
-                        <input type="text" name="firstName" placeholder="Prénom / First Name" required>
-                        <input type="text" name="lastName" placeholder="Nom / Last Name" required>
+                        <input type="text" name="firstName" data-placeholder-en="First Name"
+                            data-placeholder-fr="Prénom" placeholder="First Name" required>
+                        <input type="text" name="lastName" data-placeholder-en="Last Name" data-placeholder-fr="Nom"
+                            placeholder="Last Name" required>
                     </div>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="text" name="subject" placeholder="Objet / Subject">
-                    <textarea name="message" rows="6" placeholder="Message..." required></textarea>
+                    <input type="email" name="email" data-placeholder-en="Email" data-placeholder-fr="Email"
+                        placeholder="Email" required>
+                    <input type="text" name="subject" data-placeholder-en="Subject" data-placeholder-fr="Objet"
+                        placeholder="Subject">
+                    <textarea name="message" rows="6" data-placeholder-en="Message..." data-placeholder-fr="Message..."
+                        placeholder="Message..." required></textarea>
 
                     <button type="submit" class="btn-send">
                         <span lang="en">Send Message</span>
-                        <span lang="fr">Envoyer</span>
+                        <span lang="fr">Envoyer le message</span>
                     </button>
                 </form>
             </div>
             <div class="contact-info">
                 <div style="margin-bottom: 30px;">
-                    <h3>Management</h3>
+                    <h3>
+                        <span lang="en">Management</span>
+                        <span lang="fr">Gérance</span>
+                    </h3>
                     <p>roxy.thunder4@gmail.com</p>
                 </div>
             </div>
@@ -416,19 +424,29 @@
     </footer>
 
     <script>
+        function updatePlaceholders(isFr) {
+            const inputs = document.querySelectorAll('[data-placeholder-fr]');
+            inputs.forEach(input => {
+                input.placeholder = isFr ? input.getAttribute('data-placeholder-fr') : input.getAttribute('data-placeholder-en');
+            });
+        }
+
         function toggleLanguage() {
             const body = document.getElementById('bodyTag');
             const btn = document.getElementById('langToggle');
             const isFr = body.classList.toggle('lang-fr');
             btn.textContent = isFr ? 'EN' : 'FR';
+            updatePlaceholders(isFr);
             localStorage.setItem('roxy-lang', isFr ? 'fr' : 'en');
         }
 
         window.onload = () => {
             const saved = localStorage.getItem('roxy-lang');
-            if (saved === 'fr' || (!saved && navigator.language && navigator.language.startsWith('fr'))) {
+            const isFr = saved === 'fr' || (!saved && navigator.language && navigator.language.startsWith('fr'));
+            if (isFr) {
                 document.getElementById('bodyTag').classList.add('lang-fr');
                 document.getElementById('langToggle').textContent = 'EN';
+                updatePlaceholders(true);
             }
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
