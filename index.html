@@ -277,20 +277,42 @@
         }
 
         .merch-image {
-            background: var(--gray-light);
+            background: var(--white);
+            border-radius: 4px;
+            padding: 0;
             aspect-ratio: 1/1;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #444;
-            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .merch-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+        }
+
+        .merch-card:hover .merch-image img {
+            transform: scale(1.1) rotate(2deg);
         }
 
         .merch-price {
             color: var(--primary-yellow);
             font-weight: 800;
             font-size: 1.5rem;
+        }
+
+        .merch-sizes {
+            color: #aaa;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .merch-info-box {
@@ -561,32 +583,75 @@
     <section id="merch">
         <h2>Merch</h2>
         <div class="merch-grid">
+            <!-- 1. Rocker Tee -->
             <div class="merch-card">
-                <div class="merch-image">Tee-Shirt Design 1</div>
-                <div class="merch-title">Logo Tee</div>
+                <div class="merch-image">
+                    <img src="merch/Diapositive1.PNG" alt="Rocker Tee">
+                </div>
+                <div class="merch-title">Rocker Tee</div>
                 <div class="merch-price">$30</div>
             </div>
+            <!-- 2. Drummer Tee -->
             <div class="merch-card">
-                <div class="merch-image">Official Hat</div>
-                <div class="merch-title">Casquette</div>
-                <div class="merch-price">$25</div>
+                <div class="merch-image">
+                    <img src="merch/Diapositive2.PNG" alt="Drummer Tee">
+                </div>
+                <div class="merch-title">Drummer Tee</div>
+                <div class="merch-price">$30</div>
             </div>
+            <!-- 3. Vocal Tee -->
             <div class="merch-card">
-                <div class="merch-image">Tote Bag / Sac</div>
-                <div class="merch-title">Roxy Tote</div>
-                <div class="merch-price">$20</div>
+                <div class="merch-image">
+                    <img src="merch/Diapositive8.PNG" alt="Vocal Tee">
+                </div>
+                <div class="merch-title">Vocal Tee</div>
+                <div class="merch-price">$30</div>
+            </div>
+            <!-- 4. Guitar Tee -->
+            <div class="merch-card">
+                <div class="merch-image">
+                    <img src="merch/Diapositive9.PNG" alt="Guitar Tee">
+                </div>
+                <div class="merch-title">Neon Guitar Tee</div>
+                <div class="merch-price">$30</div>
+            </div>
+            <!-- 5. Fire Tee -->
+            <div class="merch-card">
+                <div class="merch-image">
+                    <img src="merch/Diapositive10.PNG" alt="Fire Tee">
+                </div>
+                <div class="merch-title">Fire Tee</div>
+                <div class="merch-price">$30</div>
+            </div>
+            <!-- 6. Hat -->
+            <div class="merch-card">
+                <div class="merch-image">
+                    <img src="merch/Diapositive11.PNG" alt="Roxy Hat">
+                </div>
+                <div class="merch-title">
+                    <span lang="en">Official Hat</span>
+                    <span lang="fr">Casquette Officielle</span>
+                </div>
+                <div class="merch-price">$25</div>
             </div>
         </div>
 
         <div class="merch-info-box">
             <div lang="en">
+                <p><strong>Sizes Available:</strong> All our tees come in Unisex S, M, L, and XL.</p>
                 <p><strong>Montréal Local?</strong> Pick up merch in person at a show to avoid shipping!</p>
                 <p><strong>Canada Shipping:</strong> Flat rate of $20 via Canada Post.</p>
+                <p style="margin-top: 15px; color: var(--primary-yellow); font-weight: bold;">To order, send a message
+                    using the form below.</p>
             </div>
             <div lang="fr">
+                <p><strong>Tailles disponibles :</strong> Tous nos t-shirts sont disponibles en unisexe S, M, L et XL.
+                </p>
                 <p><strong>Résident de Montréal?</strong> Évitez les frais de livraison en ramassant vos articles aux
                     shows !</p>
                 <p><strong>Livraison Canada :</strong> Tarif fixe de 20 $ via Postes Canada.</p>
+                <p style="margin-top: 15px; color: var(--primary-yellow); font-weight: bold;">Pour commander, envoyez un
+                    message avec le formulaire ci-dessous.</p>
             </div>
         </div>
     </section>
@@ -617,13 +682,6 @@
                 <div style="margin-bottom: 30px;">
                     <h3>Management</h3>
                     <p>roxy.thunder4@gmail.com</p>
-                </div>
-                <div>
-                    <h3>Booking</h3>
-                    <p>xxx@roxy-thunder.com</p>
-                </div>
-                <div style="margin-top: 50px;">
-                    <p style="font-size: 0.9rem; font-style: italic;">Montréal, Québec, Canada</p>
                 </div>
             </div>
         </div>
