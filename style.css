@@ -297,7 +297,7 @@ strong {
 /* --- THE CREW SECTION --- */
 .crew-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-top: 50px;
 }
@@ -491,6 +491,10 @@ body.lang-fr span[lang="en"] {
     .bg-graphic-left,
     .bg-graphic-right {
         opacity: 0.2;
+    }
+
+    .crew-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
