@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roxy Thunder | Official Site</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Qwitcher+Grypen:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -55,18 +58,7 @@
         }
 
         .bg-graphic-left {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 35%;
-            height: 100vh;
-            background-image: url('moon.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: left center;
-            opacity: 0.4;
-            z-index: -1;
-            pointer-events: none;
+            display: none;
         }
 
         .bg-overlay {
@@ -76,7 +68,7 @@
             width: 100%;
             height: 100%;
             /* Modified gradient to allow side graphics to pop while keeping center readable */
-            background: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0.9) 75%, rgba(0,0,0,0.2) 100%);
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.2) 100%);
             z-index: -1;
             pointer-events: none;
         }
@@ -124,7 +116,7 @@
             color: var(--white);
             margin: 0;
             line-height: 0.8;
-            filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.8));
+            filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.8));
         }
 
         .social-bar-top {
@@ -137,7 +129,7 @@
             text-transform: uppercase;
             font-size: 0.75rem;
             letter-spacing: 2px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
         }
 
         header::after {
@@ -174,28 +166,40 @@
             display: inline-block;
         }
 
-        nav a:hover { color: var(--primary-yellow); }
+        nav a:hover {
+            color: var(--primary-yellow);
+        }
 
-        section { 
-            padding: 100px 10%; 
-            max-width: 1200px; 
+        section {
+            padding: 100px 10%;
+            max-width: 1200px;
             margin: auto;
             position: relative;
             z-index: 1;
         }
 
         h2 {
+            font-family: 'Permanent Marker', cursive;
             color: var(--primary-yellow);
-            font-size: 3rem;
+            font-size: 3.5rem;
+            font-weight: 400;
             text-transform: uppercase;
             margin-bottom: 40px;
             border-left: 12px solid var(--primary-orange);
             padding-left: 20px;
-            line-height: 1;
+            line-height: 1.1;
+            letter-spacing: 1px;
         }
 
-        p { margin-bottom: 20px; font-size: 1.1rem; color: #ccc; }
-        strong { color: var(--white); }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        strong {
+            color: var(--white);
+        }
 
         .video-container {
             position: relative;
@@ -209,9 +213,16 @@
 
         .video-placeholder {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; align-items: center; justify-content: center;
-            text-transform: uppercase; color: #444; font-weight: bold;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            color: #444;
+            font-weight: bold;
         }
 
         .spotify-link {
@@ -233,9 +244,24 @@
             border-bottom: 1px solid #222;
         }
 
-        .event-date { font-weight: 800; color: var(--primary-orange); width: 180px; font-size: 1.2rem; }
-        .event-venue { flex-grow: 1; font-size: 1.1rem; }
-        .event-link { color: var(--primary-yellow); text-decoration: none; font-weight: bold; text-transform: uppercase; }
+        .event-date {
+            font-weight: 800;
+            color: var(--primary-orange);
+            width: 180px;
+            font-size: 1.2rem;
+        }
+
+        .event-venue {
+            flex-grow: 1;
+            font-size: 1.1rem;
+        }
+
+        .event-link {
+            color: var(--primary-yellow);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
         .merch-grid {
             display: grid;
@@ -254,11 +280,18 @@
             background: var(--gray-light);
             aspect-ratio: 1/1;
             margin-bottom: 20px;
-            display: flex; align-items: center; justify-content: center;
-            color: #444; font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-weight: bold;
         }
 
-        .merch-price { color: var(--primary-yellow); font-weight: 800; font-size: 1.5rem; }
+        .merch-price {
+            color: var(--primary-yellow);
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
 
         .merch-info-box {
             margin-top: 40px;
@@ -267,42 +300,110 @@
             padding: 30px;
         }
 
-        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-        .contact-form input, .contact-form textarea {
-            width: 100%; padding: 15px; margin-bottom: 15px; background: var(--gray-dark);
-            border: 1px solid #333; color: white; font-family: inherit;
-        }
-        .btn-send {
-            background: var(--primary-orange); color: black; border: none;
-            padding: 15px 40px; font-weight: 900; text-transform: uppercase;
-            cursor: pointer; width: 100%;
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
         }
 
-        footer { text-align: center; padding: 80px 20px; color: #444; font-size: 0.8rem; border-top: 1px solid #111; position: relative; z-index: 1; }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: var(--gray-dark);
+            border: 1px solid #333;
+            color: white;
+            font-family: inherit;
+        }
+
+        .btn-send {
+            background: var(--primary-orange);
+            color: black;
+            border: none;
+            padding: 15px 40px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            color: #444;
+            font-size: 0.8rem;
+            border-top: 1px solid #111;
+            position: relative;
+            z-index: 1;
+        }
 
         /* --- LANGUAGE LOGIC --- */
-        [lang="fr"] { display: none; }
-        body.lang-fr [lang="en"] { display: none; }
-        body.lang-fr [lang="fr"] { display: block; }
-        
-        span[lang="fr"] { display: none; }
-        body.lang-fr span[lang="fr"] { display: inline; }
-        span[lang="en"] { display: inline; }
-        body.lang-fr span[lang="en"] { display: none; }
+        [lang="fr"] {
+            display: none;
+        }
+
+        body.lang-fr [lang="en"] {
+            display: none;
+        }
+
+        body.lang-fr [lang="fr"] {
+            display: block;
+        }
+
+        span[lang="fr"] {
+            display: none;
+        }
+
+        body.lang-fr span[lang="fr"] {
+            display: inline;
+        }
+
+        span[lang="en"] {
+            display: inline;
+        }
+
+        body.lang-fr span[lang="en"] {
+            display: none;
+        }
 
         @media (max-width: 1024px) {
-            .bg-graphic-left, .bg-graphic-right { width: 50%; opacity: 0.2; }
+
+            .bg-graphic-left,
+            .bg-graphic-right {
+                width: 50%;
+                opacity: 0.2;
+            }
         }
 
         @media (max-width: 768px) {
-            .contact-container { grid-template-columns: 1fr; }
-            .event-item { flex-direction: column; align-items: flex-start; gap: 10px; }
-            nav a { margin: 0 8px; font-size: 0.75rem; }
-            .bg-graphic-left, .bg-graphic-right { display: none; }
-            .bg-overlay { background: var(--black); }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .event-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 0.75rem;
+            }
+
+            .bg-graphic-left,
+            .bg-graphic-right {
+                display: none;
+            }
+
+            .bg-overlay {
+                background: var(--black);
+            }
         }
     </style>
 </head>
+
 <body id="bodyTag">
 
     <!-- Background Elements -->
@@ -337,7 +438,8 @@
     <header id="home">
         <h1 class="logo-text">Roxy Thunder</h1>
         <div class="social-bar-top">
-            <span>Insta</span> • <span>Facebook</span> • <span>Spotify</span> • <span>YouTube</span> • <span>TikTok</span>
+            <span>Insta</span> • <span>Facebook</span> • <span>Spotify</span> • <span>YouTube</span> •
+            <span>TikTok</span>
         </div>
     </header>
 
@@ -347,14 +449,22 @@
             <span lang="fr">Le Groupe</span>
         </h2>
         <div lang="en">
-            <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Javier Guevara Garcia and Carmelo Fuizzotto) is a fresh, high-energy rock band rising from Montréal's vibrant scene.</p>
-            <p>Founded in 2025, they blend classic-rock power with modern attitude, delivering big riffs, catchy hooks, and electrifying presence. In March 2026, they released their debut album, instantly marking their arrival as a rising force to watch.</p>
-            <p>Loud, dynamic, and built for the stage, Roxy Thunder brings raw heart and unstoppable fire—a new force ready to shake the city and spark the next rock anthem.</p>
+            <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Laìs Candido and Javier Guevara Garcia) is
+                a fresh, high-energy rock band rising from Montréal's vibrant scene.</p>
+            <p>Founded in 2025, they blend classic-rock power with modern attitude, delivering big riffs, catchy hooks,
+                and electrifying presence. In March 2026, they released their debut album, instantly marking their
+                arrival as a rising force to watch.</p>
+            <p>Loud, dynamic, and built for the stage, Roxy Thunder brings raw heart and unstoppable fire — a new force
+                ready to shake the city and spark the next rock anthem.</p>
         </div>
         <div lang="fr">
-            <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Javier Guevara Garcia et Carmelo Fuizzotto) est un nouveau groupe rock énergique issu de la scène vibrante de Montréal.</p>
-            <p>Fondé en 2025, le groupe fusionne la puissance du rock classique avec une attitude moderne, offrant des riffs massifs, des refrains accrocheurs et une présence électrisante. En mars 2026, ils ont lancé leur premier album, marquant instantanément leur arrivée comme une force montante à surveiller.</p>
-            <p>Bruyant, dynamique et taillé pour la scène, Roxy Thunder apporte une authenticité brute et un feu inépuisable — une nouvelle force prête à secouer la ville et à créer le prochain hymne rock.</p>
+            <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Laìs Candido et Javier Guevara Garcia) est
+                un nouveau groupe rock énergique issu de la scène vibrante de Montréal.</p>
+            <p>Fondé en 2025, le groupe fusionne la puissance du rock classique avec une attitude moderne, offrant des
+                riffs massifs, des refrains accrocheurs et une présence électrisante. En mars 2026, ils ont lancé leur
+                premier album, marquant instantanément leur arrivée comme une force montante à surveiller.</p>
+            <p>Bruyant, dynamique et taillé pour la scène, Roxy Thunder apporte une authenticité brute et un feu
+                inépuisable — une nouvelle force prête à secouer la ville et à créer le prochain hymne rock.</p>
         </div>
     </section>
 
@@ -385,32 +495,65 @@
         <div class="event-list">
             <div class="event-item">
                 <div class="event-date">02 MAI 2026</div>
-                <div class="event-venue">La Sotterenea, Montréal</div>
-                <a href="#" class="event-link">
-                    <span lang="en">Tickets & Info</span>
-                    <span lang="fr">Billets & Info</span>
-                </a>
-            </div>
-            <div class="event-item">
-                <div class="event-date">MAI 2026</div>
-                <div class="event-venue">Bar #2 / Bar #3</div>
+                <div class="event-venue">
+                    <span lang="en">
+                        <a href="https://casadelpopolo.com/en/events/la-sotterenea" target="_blank"
+                            style="color: inherit; text-decoration: underline;">La Sotterenea</a>, Montréal
+                    </span>
+                    <span lang="fr">
+                        <a href="https://casadelpopolo.com/fr/events/la-sotterenea" target="_blank"
+                            style="color: inherit; text-decoration: underline;">La Sotterenea</a>, Montréal
+                    </span>
+                </div>
                 <span class="event-link">
                     <span lang="en">Coming Soon</span>
                     <span lang="fr">À venir</span>
                 </span>
             </div>
             <div class="event-item">
-                <div class="event-date">JUIN 2026</div>
-                <div class="event-venue">Local Club Tour (#4, #5, #6)</div>
+                <div class="event-date">23 MAI 2026</div>
+                <div class="event-venue">
+                    <span lang="en">
+                        <a href="https://www.hemispheregauche.com/?lang=en" target="_blank"
+                            style="color: inherit; text-decoration: underline;">L'Hémisphère Gauche</a>, Montréal
+                    </span>
+                    <span lang="fr">
+                        <a href="https://www.hemispheregauche.com/?lang=fr" target="_blank"
+                            style="color: inherit; text-decoration: underline;">L'Hémisphère Gauche</a>, Montréal
+                    </span>
+                </div>
                 <span class="event-link">
                     <span lang="en">Coming Soon</span>
                     <span lang="fr">À venir</span>
                 </span>
             </div>
             <div class="event-item">
-                <div class="event-date">JUILLET 2026</div>
-                <div class="event-venue">Festival Season - Main Stage</div>
-                <span class="event-link">Info</span>
+                <div class="event-date">13 JUIN 2026</div>
+                <div class="event-venue">
+                    <a href="https://piranhabar.ca" target="_blank"
+                        style="color: inherit; text-decoration: underline;">Piranha Bar</a>, Montréal
+                </div>
+                <span class="event-link">
+                    <span lang="en">Coming Soon</span>
+                    <span lang="fr">À venir</span>
+                </span>
+            </div>
+            <div class="event-item">
+                <div class="event-date">11 JUILLET 2026</div>
+                <div class="event-venue">
+                    <span lang="en">
+                        <a href="https://cafecampus.com/en" target="_blank"
+                            style="color: inherit; text-decoration: underline;">Petit Campus</a>, Montréal
+                    </span>
+                    <span lang="fr">
+                        <a href="https://cafecampus.com/fr" target="_blank"
+                            style="color: inherit; text-decoration: underline;">Petit Campus</a>, Montréal
+                    </span>
+                </div>
+                <span class="event-link">
+                    <span lang="en">Coming Soon</span>
+                    <span lang="fr">À venir</span>
+                </span>
             </div>
         </div>
     </section>
@@ -441,7 +584,8 @@
                 <p><strong>Canada Shipping:</strong> Flat rate of $20 via Canada Post.</p>
             </div>
             <div lang="fr">
-                <p><strong>Résident de Montréal?</strong> Évitez les frais de livraison en ramassant vos articles aux shows !</p>
+                <p><strong>Résident de Montréal?</strong> Évitez les frais de livraison en ramassant vos articles aux
+                    shows !</p>
                 <p><strong>Livraison Canada :</strong> Tarif fixe de 20 $ via Postes Canada.</p>
             </div>
         </div>
@@ -462,7 +606,7 @@
                     <input type="email" name="email" placeholder="Email" required>
                     <input type="text" name="subject" placeholder="Objet / Subject">
                     <textarea name="message" rows="6" placeholder="Message..." required></textarea>
-                    
+
                     <button type="submit" class="btn-send">
                         <span lang="en">Send Message</span>
                         <span lang="fr">Envoyer</span>
@@ -486,7 +630,8 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 ROXY THUNDER. <span lang="en">ALL RIGHTS RESERVED.</span><span lang="fr">TOUS DROITS RÉSERVÉS.</span></p>
+        <p>&copy; 2025 ROXY THUNDER. <span lang="en">ALL RIGHTS RESERVED.</span><span lang="fr">TOUS DROITS
+                RÉSERVÉS.</span></p>
         <p style="margin-top: 10px;">
             <span lang="en">PROUDLY MADE IN MONTRÉAL</span>
             <span lang="fr">FIÈREMENT FAIT À MONTRÉAL</span>
@@ -514,4 +659,5 @@
         };
     </script>
 </body>
+
 </html>
