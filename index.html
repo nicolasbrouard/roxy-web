@@ -123,13 +123,29 @@
             margin-top: 30px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .social-icon {
             color: var(--primary-yellow);
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+        }
+
+        .social-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke-width: 2;
+        }
+
+        .social-icon:hover {
+            color: var(--primary-orange);
+            transform: translateY(-5px) scale(1.1);
+            filter: drop-shadow(0 0 10px rgba(243, 112, 33, 0.6));
         }
 
         header::after {
@@ -201,6 +217,34 @@
             color: var(--white);
         }
 
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 10px 10px 0 var(--primary-orange);
+            filter: grayscale(100%) contrast(1.2);
+            transition: all 0.3s;
+        }
+
+        .about-image img:hover {
+            filter: grayscale(0%) contrast(1);
+            transform: translate(-5px, -5px);
+            box-shadow: 15px 15px 0 var(--primary-yellow);
+        }
+
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -267,6 +311,78 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
+        }
+
+        /* --- THE CREW SECTION --- */
+        .crew-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .crew-card {
+            background: var(--gray-dark);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .crew-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-orange);
+        }
+
+        .crew-image-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-orange);
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .crew-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .crew-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            color: var(--white);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .crew-role {
+            color: var(--primary-yellow);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .crew-instrument {
+            color: var(--primary-orange);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .crew-bio {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .merch-card {
@@ -393,14 +509,16 @@
 
             .bg-graphic-left,
             .bg-graphic-right {
-                width: 50%;
                 opacity: 0.2;
             }
         }
 
         @media (max-width: 768px) {
-            .contact-container {
+
+            .contact-container,
+            .about-content {
                 grid-template-columns: 1fr;
+                flex-direction: column-reverse;
             }
 
             .event-item {
@@ -460,8 +578,53 @@
     <header id="home">
         <h1 class="logo-text">Roxy Thunder</h1>
         <div class="social-bar-top">
-            <span>Insta</span> • <span>Facebook</span> • <span>Spotify</span> • <span>YouTube</span> •
-            <span>TikTok</span>
+            <!-- Instagram -->
+            <a href="#" class="social-icon" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="#" class="social-icon" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+            </a>
+            <!-- Spotify -->
+            <a href="#" class="social-icon" aria-label="Spotify">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M8 11.5c4-1.5 9-1.5 13 0"></path> <!-- Simplified representation or use path -->
+                    <path d="M8 14.5c4-1.5 8-1.5 12 0"></path>
+                    <path d="M9 17.5c3-1 6-1 9 0"></path>
+                    <!-- Better Spotify path: -->
+                    <path
+                        d="M17.4 15.3c-.3.4-.8.5-1.2.3-3.4-2.1-7.7-2.5-12.7-1.4-.5.1-1-.2-1.1-.7-.1-.5.3-1 .7-1.1 5.6-1.3 10.3-.8 14.1 1.6.4.2.4.8.2 1.2z">
+                    </path>
+                </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="#" class="social-icon" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                    </path>
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="#" class="social-icon" aria-label="TikTok">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                </svg>
+            </a>
         </div>
     </header>
 
@@ -470,23 +633,85 @@
             <span lang="en">The Band</span>
             <span lang="fr">Le Groupe</span>
         </h2>
-        <div lang="en">
-            <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Laìs Candido and Javier Guevara Garcia) is
-                a fresh, high-energy rock band rising from Montréal's vibrant scene.</p>
-            <p>Founded in 2025, they blend classic-rock power with modern attitude, delivering big riffs, catchy hooks,
-                and electrifying presence. In March 2026, they released their debut album, instantly marking their
-                arrival as a rising force to watch.</p>
-            <p>Loud, dynamic, and built for the stage, Roxy Thunder brings raw heart and unstoppable fire — a new force
-                ready to shake the city and spark the next rock anthem.</p>
+
+        <div class="about-content">
+            <div class="about-text">
+                <div lang="en">
+                    <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Laìs Candido and Javier Guevara
+                        Garcia) is a fresh, high-energy rock band rising from Montréal's vibrant scene.</p>
+                    <p>Founded in 2025, they blend classic-rock power with modern attitude, delivering big riffs, catchy
+                        hooks, and electrifying presence. In March 2026, they released their debut album, instantly
+                        marking their arrival as a rising force to watch.</p>
+                    <p>Loud, dynamic, and built for the stage, Roxy Thunder brings raw heart and unstoppable fire — a
+                        new force ready to shake the city and spark the next rock anthem.</p>
+                </div>
+                <div lang="fr">
+                    <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Laìs Candido et Javier Guevara
+                        Garcia) est
+                        un nouveau groupe rock énergique issu de la scène vibrante de Montréal.</p>
+                    <p>Fondé en 2025, le groupe fusionne la puissance du rock classique avec une attitude moderne,
+                        offrant des
+                        riffs massifs, des refrains accrocheurs et une présence électrisante. En mars 2026, ils ont
+                        lancé leur
+                        premier album, marquant instantanément leur arrivée comme une force montante à surveiller.</p>
+                    <p>Bruyant, dynamique et taillé pour la scène, Roxy Thunder apporte une authenticité brute et un feu
+                        inépuisable — une nouvelle force prête à secouer la ville et à créer le prochain hymne rock.</p>
+                </div>
+            </div>
+
+            <div class="about-image">
+                <img src="https://placehold.co/800x600/1e1e1e/f37021?text=ROXY+THUNDER+LIVE"
+                    alt="Roxy Thunder Live on Stage">
+            </div>
         </div>
-        <div lang="fr">
-            <p><strong>Roxy Thunder</strong> (Emmanuel Raymond, Kriss Ivanov, Laìs Candido et Javier Guevara Garcia) est
-                un nouveau groupe rock énergique issu de la scène vibrante de Montréal.</p>
-            <p>Fondé en 2025, le groupe fusionne la puissance du rock classique avec une attitude moderne, offrant des
-                riffs massifs, des refrains accrocheurs et une présence électrisante. En mars 2026, ils ont lancé leur
-                premier album, marquant instantanément leur arrivée comme une force montante à surveiller.</p>
-            <p>Bruyant, dynamique et taillé pour la scène, Roxy Thunder apporte une authenticité brute et un feu
-                inépuisable — une nouvelle force prête à secouer la ville et à créer le prochain hymne rock.</p>
+    </section>
+
+    <section id="crew">
+        <h2>The Crew</h2>
+        <div class="crew-grid">
+            <!-- 1. Emmanuel -->
+            <div class="crew-card">
+                <div class="crew-image-container">
+                    <img src="https://placehold.co/150/111/f37021?text=ER" alt="Emmanuel" class="crew-photo">
+                </div>
+                <div class="crew-name">Emmanuel</div>
+                <div class="crew-role">"The Leader"</div>
+                <div class="crew-instrument">Vocals & Guitar</div>
+                <div class="crew-bio">Driving force behind the band's signature sound.</div>
+            </div>
+
+            <!-- 2. Kriss -->
+            <div class="crew-card">
+                <div class="crew-image-container">
+                    <img src="https://placehold.co/150/111/f37021?text=KI" alt="Kriss" class="crew-photo">
+                </div>
+                <div class="crew-name">Kriss</div>
+                <div class="crew-role">"Shredder"</div>
+                <div class="crew-instrument">Lead Guitar</div>
+                <div class="crew-bio">Master of complex riffs and searing solos.</div>
+            </div>
+
+            <!-- 3. Laìs -->
+            <div class="crew-card">
+                <div class="crew-image-container">
+                    <img src="https://placehold.co/150/111/f37021?text=LC" alt="Laìs" class="crew-photo">
+                </div>
+                <div class="crew-name">Laìs</div>
+                <div class="crew-role">"The Groove"</div>
+                <div class="crew-instrument">Bass</div>
+                <div class="crew-bio">The rhythmic bedrock of the band's heavy sound.</div>
+            </div>
+
+            <!-- 4. Javier -->
+            <div class="crew-card">
+                <div class="crew-image-container">
+                    <img src="https://placehold.co/150/111/f37021?text=JGG" alt="Javier" class="crew-photo">
+                </div>
+                <div class="crew-name">Javier</div>
+                <div class="crew-role">"The Pulse"</div>
+                <div class="crew-instrument">Drums</div>
+                <div class="crew-bio">Metronome of mayhem and explosive energy.</div>
+            </div>
         </div>
     </section>
 
@@ -688,7 +913,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 ROXY THUNDER. <span lang="en">ALL RIGHTS RESERVED.</span><span lang="fr">TOUS DROITS
+        <p>&copy; 2026 ROXY THUNDER. <span lang="en">ALL RIGHTS RESERVED.</span><span lang="fr">TOUS DROITS
                 RÉSERVÉS.</span></p>
         <p style="margin-top: 10px;">
             <span lang="en">PROUDLY MADE IN MONTRÉAL</span>
