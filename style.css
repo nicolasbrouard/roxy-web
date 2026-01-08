@@ -376,7 +376,7 @@ strong {
 .merch-image {
     background: var(--white);
     border-radius: 4px;
-    padding: 0;
+    padding: 10px;
     aspect-ratio: 1/1;
     margin-bottom: 20px;
     display: flex;
