@@ -27,14 +27,14 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    width: 35%;
-    height: 100vh;
+    width: 600px;
+    height: 1534px;
     background-image: url('sidebar.png');
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;
-    background-position: right center;
-    opacity: 0.4;
-    z-index: -1;
+    background-position: top right;
+    opacity: 1;
+    z-index: 0;
     pointer-events: none;
 }
 
@@ -88,7 +88,7 @@ header {
     padding: 140px 20px 100px;
     text-align: center;
     position: relative;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+
 }
 
 .logo-text {
@@ -488,8 +488,7 @@ body.lang-fr span[lang="en"] {
 
 @media (max-width: 1024px) {
 
-    .bg-graphic-left,
-    .bg-graphic-right {
+    .bg-graphic-left {
         opacity: 0.2;
     }
 
