@@ -52,18 +52,17 @@ body {
 /* Hero / Header Section */
 header {
     background-color: var(--black);
-    padding: 140px 20px 100px;
+    padding: 80px 20px 80px;
     text-align: center;
     position: relative;
 }
 
-.logo-text {
-    font-family: 'Qwitcher Grypen', cursive;
-    font-size: clamp(5rem, 18vw, 12rem);
-    color: var(--white);
-    margin: 0;
-    line-height: 0.8;
-    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.8));
+.logo-img {
+    max-width: 600px;
+    width: 95%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .social-bar-top {
