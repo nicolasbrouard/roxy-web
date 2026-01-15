@@ -22,37 +22,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Fixed Background Graphics - Increased visibility */
-.bg-graphic-right {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 600px;
-    height: 100vh;
-    background-image: url('sidebar.png');
-    background-size: auto;
-    background-repeat: repeat-y;
-    background-position: top right;
-    opacity: 1;
-    z-index: 0;
-    pointer-events: none;
-}
 
-.bg-graphic-left {
-    display: none;
-}
-
-.bg-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Modified gradient to allow side graphics to pop while keeping center readable */
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.2) 100%);
-    z-index: -1;
-    pointer-events: none;
-}
 
 /* Language Toggle Button */
 .lang-switch {
@@ -81,14 +51,10 @@ body {
 
 /* Hero / Header Section */
 header {
-    background-image: url('header.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: var(--black);
     padding: 140px 20px 100px;
     text-align: center;
     position: relative;
-
 }
 
 .logo-text {
@@ -488,9 +454,6 @@ body.lang-fr span[lang="en"] {
 
 @media (max-width: 1024px) {
 
-    .bg-graphic-left {
-        opacity: 0.2;
-    }
 
     .crew-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -516,12 +479,5 @@ body.lang-fr span[lang="en"] {
         font-size: 0.75rem;
     }
 
-    .bg-graphic-left,
-    .bg-graphic-right {
-        display: none;
-    }
 
-    .bg-overlay {
-        background: var(--black);
-    }
 }
